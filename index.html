@@ -14873,18 +14873,71 @@ After (transfer):   5.1875
 <p>A policy without transfer disproportionately (in percentage terms) hurts the poorer individual. The transfer helps spread the losses nearly evenly.</p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>And we can check the total change, by using $s_r$. I here calculate the average utility.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">u_total</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sr</span><span class="p">)</span><span class="o">*</span><span class="n">u_poor</span> <span class="o">+</span> <span class="n">sr</span><span class="o">*</span><span class="n">u_rich</span>
+<span class="n">u_total_tax</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sr</span><span class="p">)</span><span class="o">*</span><span class="n">u_poor_tax</span> <span class="o">+</span> <span class="n">sr</span><span class="o">*</span><span class="n">u_rich_tax</span>
+<span class="n">u_total_tax_transfer</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sr</span><span class="p">)</span><span class="o">*</span><span class="n">u_poor_tax_transfer</span> <span class="o">+</span> <span class="n">sr</span><span class="o">*</span><span class="n">u_rich_tax_transfer</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total average utiltiy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before:            &quot;</span><span class="p">,</span> <span class="n">u_total</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After (tax only):  &quot;</span><span class="p">,</span> <span class="n">u_total_tax</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% lo</span><span class="s2">ss             &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(((</span><span class="n">u_total_tax</span><span class="o">/</span><span class="n">u_total</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After (transfer):  &quot;</span><span class="p">,</span> <span class="n">u_total_tax_transfer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% lo</span><span class="s2">ss             &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(((</span><span class="n">u_total_tax_transfer</span><span class="o">/</span><span class="n">u_total</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Total average utiltiy
+Before:             3.753450655416562
+After (tax only):   3.5
+% loss              -6.752470691224088 %
+After (transfer):   3.6875
+% loss              -1.7570673353968114 %
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
